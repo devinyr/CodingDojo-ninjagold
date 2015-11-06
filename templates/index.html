@@ -1,6 +1,7 @@
 <html>
   <body>
     <p>Welcome to Ninja Money!</p>
+
     
  	<h3>Your Gold: </h3>
  	<p>{{session['yourGold']}}</p>	
@@ -34,9 +35,14 @@
         </form>
 
         Activities:
+
+
         <textarea rows="4" cols="50" name='activities' readonly >
-        	
+        {% for i in session['activities'][::-1] %}
+        <p>{{ i }}</p>
+        {% endfor %}
         </textarea>
+
 
   </body>
 
